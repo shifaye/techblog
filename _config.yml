@@ -2,6 +2,8 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
+disqus_shortname: octo-blog
+
 # Site
 title: Octo's Space
 subtitle: 'If not now, when? If no me, who?'
@@ -13,12 +15,17 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://shifaye.github.io/memo-of-octo-on-hexo/
+url: https://shifaye.github.io/techblog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  category: unclassified
+
+social:
+    GitHub: https://github.com/shifaye/techblog.git
+    Email: shifaye11@gmail.com
 
 # Directory
 source_dir: source
@@ -66,7 +73,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: unclassified
 category_map:
   Autonomous Driving: ads
   Computer Science: cs
@@ -109,5 +116,10 @@ theme: clean-blog
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+   type: git
+   repo: https://github.com/shifaye/techblog.git
+   branch: main
+   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
